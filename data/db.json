@@ -1,0 +1,112 @@
+{
+  "decks": [
+    {
+      "id": 1,
+      "name": "Rendering in React",
+      "description": "React's component structure allows for quickly building a complex web application that relies on DOM manipulation. "
+    },
+    {
+      "name": "React Router",
+      "description": "React Router is a collection of navigational components that compose declaratively with your application.",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "front": "How do you modify the state of a different React component?",
+      "back": "Not at all! State is visible to the component only.sss",
+      "id": 2,
+      "deckId": "1"
+    },
+    {
+      "front": "How do you pass data 'down' to a React child component?",
+      "back": "As properties or propssss",
+      "id": 3,
+      "deckId": "1"
+    },
+    {
+      "front": "What path will match the follow Route?\n<Route>\n  <NotFound />\n</Route>",
+      "back": "All paths. A route with no path matches all URL's",
+      "deckId": 2,
+      "id": 4
+    },
+    {
+      "front": "What does <Switch> do?",
+      "back": "Renders the first matching child <Route> hghgfhfghfgh",
+      "deckId": 2,
+      "id": 5
+    },
+    {
+      "front": "fssssdrgdfgdfgdfg",
+      "back": "fddddd",
+      "deckId": 1,
+      "id": 9
+    },
+    {
+      "front": "sdfsdf",
+      "back": "sdfsdf",
+      "deckId": null,
+      "id": 10
+    },
+    {
+      "front": "dsfsdf",
+      "back": "sdfsdffffff",
+      "deckId": 1,
+      "id": 11
+    },
+    {
+      "front": "qweqwe",
+      "back": "qweqwewwwww",
+      "id": 12,
+      "deckId": "3"
+    },
+    {
+      "front": "www",
+      "back": "www",
+      "deckId": 3,
+      "id": 13
+    },
+    {
+      "front": "weqwe",
+      "back": "qweqweqwe",
+      "deckId": 3,
+      "id": 14
+    },
+    {
+      "front": "wqeqweqwe",
+      "back": "qweqwe",
+      "deckId": 3,
+      "id": 15
+    },
+    {
+      "front": "card 1 ",
+      "back": "sdfsfsdfsdf",
+      "deckId": 4,
+      "id": 16
+    },
+    {
+      "front": "card 2 ",
+      "back": "sdfsdfsdfsdf",
+      "deckId": 4,
+      "id": 17
+    },
+    {
+      "front": "card 3 ",
+      "back": "dsfsfsdfsdfsdf",
+      "deckId": 4,
+      "id": 18
+    },
+    {
+      "front": "car 345345345",
+      "back": "sdfsdfsdfsdf",
+      "deckId": 4,
+      "id": 19
+    },
+    {
+      "front": "sdfsdfsdf",
+      "back": "sdfsdf",
+      "deckId": 1,
+      "id": 20
+    }
+  ]
+}

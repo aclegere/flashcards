@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function CardForm({ initialData, onSubmit, onCancel }) {
+function CardForm({ initialData, onSubmit, onCancel, isEditing }) {
   const history = useHistory();
   const [formData, setFormData] = useState({ ...initialData });
 
@@ -23,7 +23,11 @@ function CardForm({ initialData, onSubmit, onCancel }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    onSubmit(formData);
+    if (isEditing) {
+      onSubmit(formData);
+    } else {
+      onSubmit(formData.front, formData.back); // For AddCard, we pass front and back directly
+    }
   }
 
   return (

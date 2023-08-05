@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { createCard, readDeck } from "../utils/api";
+import CardForm from "./CardForm";
 
 function AddCard() {
   const { deckId } = useParams();
@@ -23,17 +24,9 @@ function AddCard() {
     loadDeck();
   }, [deckId]);
 
-  const handleChange = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (front, back) => {
     try {
-      await createCard(deckId, formData);
+      await createCard(deckId, { front, back });
       history.push(`/decks/${deckId}`);
     } catch (error) {
       console.error("Error adding card:", error);
@@ -50,45 +43,12 @@ function AddCard() {
         <>
           <h2>{deck.name}</h2>
           <h3>Add Card</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="front" className="form-label">
-                Front
-              </label>
-              <textarea
-                id="front"
-                name="front"
-                className="form-control"
-                rows="3"
-                value={formData.front}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="back" className="form-label">
-                Back
-              </label>
-              <textarea
-                id="back"
-                name="back"
-                className="form-control"
-                rows="3"
-                value={formData.back}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <button
-              type="button"
-              className="btn btn-secondary mr-2"
-              onClick={handleCancel}>
-              Cancel
-            </button>
-            <button type="submit" className="btn btn-primary">
-              Save
-            </button>
-          </form>
+          <CardForm
+            initialData={formData}
+            onSubmit={handleSubmit}
+            onCancel={handleCancel}
+            isEditing={false} // Pass isEditing prop as false for AddCard
+          />
         </>
       )}
     </div>

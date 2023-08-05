@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { readDeck, readCard, updateCard } from "../utils/api";
-import CardForm from "./CardForm";
+import CardForm from "./CardForm"; // Import the CardForm component
 
 function EditCard() {
   const { deckId, cardId } = useParams();
@@ -23,8 +23,7 @@ function EditCard() {
     loadDeckAndCard();
   }, [deckId, cardId]);
 
-  // Function to handle form submission
-  async function handleSubmit(formData) {
+  const handleSubmit = async (formData) => {
     try {
       const updatedCard = {
         ...card,
@@ -35,12 +34,11 @@ function EditCard() {
     } catch (error) {
       console.error("Error updating card:", error);
     }
-  }
+  };
 
-  // Function to handle cancel button click
-  function handleCancel() {
+  const handleCancel = () => {
     history.push(`/decks/${deckId}`);
-  }
+  };
 
   return (
     <div>
@@ -49,9 +47,10 @@ function EditCard() {
         <h2>Edit Card</h2>
         {card.id && ( // Check if card data is loaded
           <CardForm
-            initialData={card} // Pass the card data to CardForm
+            initialData={card}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
+            isEditing={true} // Pass isEditing prop as true for EditCard
           />
         )}
       </div>

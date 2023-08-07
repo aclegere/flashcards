@@ -18,7 +18,7 @@ function Deck() {
       }
     }
     loadDeck();
-  }, [deckId]);
+  }, [deck]);
 
   async function handleDeleteCard(cardId) {
     const confirmDelete = window.confirm(

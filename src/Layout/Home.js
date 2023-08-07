@@ -16,7 +16,7 @@ function Home() {
       }
     }
     fetchDecks();
-  });
+  }, []);
 
   // Function to handle deck deletion
   async function handleDeleteDeck(deckId) {

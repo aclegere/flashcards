@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory, useRouteMatch } from "react-router-dom";
-import { readDeck, deleteDeck, deleteCard } from "../utils/api";
+import { readDeck, deleteCard } from "../utils/api";
 
 function Deck() {
   const { deckId } = useParams();
@@ -18,7 +18,7 @@ function Deck() {
       }
     }
     loadDeck();
-  });
+  }, [deckId]);
 
   async function handleDeleteCard(cardId) {
     const confirmDelete = window.confirm(

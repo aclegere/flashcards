@@ -36,20 +36,6 @@ function Deck() {
     }
   }
 
-  async function handleDeleteDeck() {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this deck?"
-    );
-    if (confirmDelete) {
-      try {
-        await deleteDeck(deckId);
-        history.push("/");
-      } catch (error) {
-        console.error("Error deleting deck:", error);
-      }
-    }
-  }
-
   return (
     <div>
       <nav aria-label="breadcrumb">

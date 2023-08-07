@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory, useRouteMatch } from "react-router-dom";
 import { readDeck, deleteDeck, deleteCard } from "../utils/api";
 
 function Deck() {
   const { deckId } = useParams();
   const [deck, setDeck] = useState({});
+  const history = useHistory();
+  const { url } = useRouteMatch();
 
   useEffect(() => {
     async function loadDeck() {
@@ -16,23 +18,21 @@ function Deck() {
       }
     }
     loadDeck();
-  }, [deckId]);
+  });
 
   async function handleDeleteCard(cardId) {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this card?"
     );
-    if (confirmDelete) {
-      try {
+    try {
+      if (confirmDelete) {
         await deleteCard(cardId);
-        // After successful card deletion, update the deck state to reflect the changes
-        setDeck((prevDeck) => ({
-          ...prevDeck,
-          cards: prevDeck.cards.filter((card) => card.id !== cardId),
-        }));
-      } catch (error) {
-        console.error("Error deleting card:", error);
+        history.push(`/`);
+      } else {
+        history.push(`${url}`);
       }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -43,8 +43,7 @@ function Deck() {
     if (confirmDelete) {
       try {
         await deleteDeck(deckId);
-        // Handle deletion, redirect to home
-        window.location.reload();
+        history.push("/");
       } catch (error) {
         console.error("Error deleting deck:", error);
       }
@@ -75,11 +74,6 @@ function Deck() {
         <Link to={`/decks/${deckId}/cards/new`} className="btn btn-primary">
           Add Cards
         </Link>
-        <button
-          className="btn btn-danger float-right"
-          onClick={handleDeleteDeck}>
-          Delete
-        </button>
       </div>
       <div className="mt-4">
         <h3>Cards</h3>

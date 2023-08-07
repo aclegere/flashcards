@@ -61,24 +61,6 @@
       "deckId": "3"
     },
     {
-      "front": "www",
-      "back": "www",
-      "deckId": 3,
-      "id": 13
-    },
-    {
-      "front": "weqwe",
-      "back": "qweqweqwe",
-      "deckId": 3,
-      "id": 14
-    },
-    {
-      "front": "wqeqweqwe",
-      "back": "qweqwe",
-      "deckId": 3,
-      "id": 15
-    },
-    {
       "front": "card 1 ",
       "back": "sdfsfsdfsdf",
       "deckId": 4,
@@ -103,34 +85,22 @@
       "id": 19
     },
     {
-      "front": "sdfsdfsdf",
-      "back": "sdfsdf",
+      "front": "dfgdfgdfg",
+      "back": "dfgdfgdfg",
       "deckId": 1,
       "id": 20
     },
     {
-      "front": "fsdfsdf",
-      "back": "sdfsdfsdf",
+      "front": "dfgdfgggggg",
+      "back": "gggg",
       "deckId": 1,
       "id": 21
     },
     {
-      "front": "fffffffffffffffffffffffffffffffffyesssssssssssssssssssssss",
-      "back": "ffffffffffffffffffffffffffffffaaaaaaaaaaaaaaaa",
+      "front": "wqeqewww",
+      "back": "qqqqqqqqqqqq",
       "deckId": 1,
       "id": 22
-    },
-    {
-      "front": "working",
-      "back": "dfsdfsdfsdfsdfvvvvvvvvvv",
-      "deckId": 1,
-      "id": 23
-    },
-    {
-      "front": "dfgdfgdfg",
-      "back": "gggg",
-      "deckId": 1,
-      "id": 24
     }
   ]
 }
